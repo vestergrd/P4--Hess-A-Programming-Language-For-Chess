@@ -1,0 +1,45 @@
+BOARD(H10);
+
+XAWN = {Direct true MOVE UP 1, Direct false ATTACK UP RIGHT 1, Direct false ATTACK UP LEFT 1};
+
+ZAWN = {Direct true MOVE DOWN 1, Direct false ATTACK DOWN RIGHT 1, Direct false ATTACK DOWN LEFT 1};
+
+ROOK = {Path true ATKMOVE UP 10, Path true ATKMOVE DOWN 10, Path true ATKMOVE RIGHT 10, Path true ATKMOVE LEFT 10};
+
+KNIT = {Direct false ATKMOVE UP 2 RIGHT 1, Direct false ATKMOVE UP 2 LEFT 1,
+        Direct false ATKMOVE UP 1 RIGHT 2, Direct false ATKMOVE DOWN 1 RIGHT 2,
+        Direct false ATKMOVE DOWN 2 RIGHT 1, Direct false ATKMOVE DOWN 2 LEFT 1,
+        Direct false ATKMOVE UP 1 LEFT 2, Direct false ATKMOVE DOWN 1 LEFT 2};
+
+BISH = {Path true ATKMOVE UP RIGHT 10, Path true ATKMOVE UP LEFT 10, Path true ATKMOVE DOWN RIGHT 10, Path true ATKMOVE DOWN LEFT 10};
+
+QUEN = {
+    Path true ATKMOVE UP RIGHT 10, Path true ATKMOVE UP LEFT 10, Path true ATKMOVE DOWN RIGHT 10, Path true ATKMOVE DOWN LEFT 10,
+    Path true ATKMOVE UP 10, Path true ATKMOVE DOWN 10, Path true ATKMOVE RIGHT 10, Path true ATKMOVE LEFT 10
+};
+
+KING = {
+    Direct true ATKMOVE UP RIGHT 1, Direct true ATKMOVE UP LEFT 1, Direct true ATKMOVE DOWN RIGHT 1, Direct true ATKMOVE DOWN LEFT 1,
+    Direct true ATKMOVE UP 1, Direct true ATKMOVE DOWN 1, Direct true ATKMOVE RIGHT 1, Direct true ATKMOVE LEFT 1
+};
+
+Spiller1_pawn_placement = PLACE(XAWN, {A2, B2, C2, D2, E2, F2, G2, H2});
+Spiller1_rook_placement = PLACE(ROOK, {A1, H1});
+Spiller1_knight_placement = PLACE(KNIT, {B1, G1});
+Spiller1_bishop_placement = PLACE(BISH, {C1, F1});
+Spiller1_queen_placement = PLACE(QUEN, {D1});
+Spiller1_king_placement = PLACE(KING, {E1});
+
+Spiller2_pawn_placement = PLACE(ZAWN, {A9, B9, C9, D9, E9, F9, G9, H9});
+Spiller2_rook_placement = PLACE(ROOK, {A10, H10});
+Spiller2_knight_placement = PLACE(KNIT, {B10, G10});
+Spiller2_bishop_placement = PLACE(BISH, {C10, F10});
+Spiller2_queen_placement = PLACE(QUEN, {D10});
+Spiller2_king_placement = PLACE(KING, {E10});
+
+Spiller1 = {Spiller1_pawn_placement, Spiller1_rook_placement, Spiller1_knight_placement, Spiller1_bishop_placement, Spiller1_queen_placement, Spiller1_king_placement };
+           
+Spiller2 = {Spiller2_pawn_placement, Spiller2_rook_placement, Spiller2_knight_placement, Spiller2_bishop_placement, Spiller2_queen_placement, Spiller2_king_placement};
+          
+
+STARTGAME(Spiller1, Spiller2);
